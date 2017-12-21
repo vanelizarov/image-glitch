@@ -37,8 +37,9 @@ function update() {
   for (let y = 0; y < height; ++y) {
     let choice = []
     let start
+    let offset = 0
 
-    inner: for (let x = y * bias; x < y * bias + bias; x += 4) {
+    for (let x = y * bias + offset; x < y * bias + bias; x += 4) {
       const r = data[x]
       const g = data[x + 1]
       const b = data[x + 2]
@@ -54,10 +55,9 @@ function update() {
       } else {
         sortPixels(choice)
         glitched.splice(start, choice.length, ...choice)
+        offset = start + choice.length
         start = undefined
         choice = []
-
-        continue inner
       }
     }
   }
