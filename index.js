@@ -6,7 +6,7 @@ const context = canvas.getContext('2d')
 const image = new Image()
 image.addEventListener('load', render)
 image.crossOrigin = 'anonymous'
-image.src = 'https://lh6.googleusercontent.com/-p4IJM6npkw8/AAAAAAAAAAI/AAAAAAAAN4E/J9UaJUCcqos/photo.jpg'
+image.src = 'buddha.jpg'
 
 let amount = 0
 
